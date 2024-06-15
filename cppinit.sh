@@ -1,6 +1,7 @@
 #!/bin/bash
 
 RED_C="$(tput setaf 1)"
+YELLOW_C="$(tput setaf 3)"
 GREEN_C="$(tput setaf 2)"
 DEFAULT_C="$(tput sgr0)"
 
@@ -42,7 +43,7 @@ re: fclean all
 .PHONY: clean
 EOF
 
-    echo "${GREEN_C}Created Makefile that generates ${RED_C}$name${DEFAULT_C}"
+    echo "${GREEN_C}Created Makefile that generates ${YELLOW_C}$name${DEFAULT_C}"
 }
 
 
@@ -74,7 +75,7 @@ private:
 #endif
 EOF
 
-    echo "${GREEN_C}Created ${RED_C}$name ${GREEN_C}class header file${DEFAULT_C}"
+    echo "${GREEN_C}Created ${YELLOW_C}$name ${GREEN_C}class header file${DEFAULT_C}"
 }
 
 
@@ -108,7 +109,7 @@ $name::~$name()
 
 EOF
 
-    echo "${GREEN_C}Created ${RED_C}$name ${GREEN_C}class source file${DEFAULT_C}"
+    echo "${GREEN_C}Created ${YELLOW_C}$name ${GREEN_C}class source file${DEFAULT_C}"
 }
 
 
