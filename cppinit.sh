@@ -1,7 +1,11 @@
 #!/bin/bash
 
+RED_C="$(tput setaf 1)"
+GREEN_C="$(tput setaf 2)"
+DEFAULT_C="$(tput sgr0)"
+
 if [ "$#" -ne 4 ]; then
-    echo "Usage: $0 <project_name> <class_names> <other_cpp_files> <other_inc_files>"
+    echo "${RED_C}Usage: $0 <project_name> <class_names> <other_cpp_files> <other_inc_files>${DEFAULT_C}"
     exit 1
 fi
 
@@ -38,7 +42,7 @@ re: fclean all
 .PHONY: clean
 EOF
 
-    echo "Created Makefile with NAME=$name and INC=$inc"
+    echo "${GREEN_C}Created Makefile that generates ${RED_C}$name${DEFAULT_C}"
 }
 
 
@@ -70,7 +74,7 @@ private:
 #endif
 EOF
 
-    echo "Created $name class header file"
+    echo "${GREEN_C}Created ${RED_C}$name ${GREEN_C}class header file${DEFAULT_C}"
 }
 
 
@@ -104,7 +108,7 @@ $name::~$name()
 
 EOF
 
-    echo "Created $name class source file"
+    echo "${GREEN_C}Created ${RED_C}$name ${GREEN_C}class source file${DEFAULT_C}"
 }
 
 
