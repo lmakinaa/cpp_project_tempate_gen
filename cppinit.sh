@@ -66,7 +66,7 @@ public:
     $name();
     $name(const $name& src);
     ~$name();
-    $name& operator=(const $name src);
+    $name& operator=(const $name& src);
 
 private:
     // members here
